@@ -37,6 +37,25 @@ public class EmployeeDao implements IEmployeeDao {
 			JdbcUtil.realease(conn, pst, rs);
 		}
 		return 0;
+//    	Connection conn = null;
+//    	try {
+//			conn = JdbcUtil.getConnection();
+//			int i = JdbcUtil.insert("insert into emps(name, age, wage, inductiontime) value(?, ?, ?, ?)", 
+//					employee.getName(), employee.getAge(), employee.getWage(), employee.getInductionTime());
+//			return i;
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}finally{
+//			if(conn != null){
+//				try {
+//					conn.close();
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
+//				conn = null;
+//			}
+//		}
+//    	return 0;
 	}
 
 	@Override
@@ -64,6 +83,23 @@ public class EmployeeDao implements IEmployeeDao {
 		}
 		
 		return list;
+//		try {
+//			conn = JdbcUtil.getConnection();
+//			 list = JdbcUtil.query("select name, wage from emps limit ?, ?", 2, page * pageNumber - pageNumber, pageNumber);
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}finally{
+//			if(conn != null){
+//				try {
+//					conn.close();
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
+//				conn = null;
+//			}
+//		}
+//		return list;
 	}
 
 	@Override
